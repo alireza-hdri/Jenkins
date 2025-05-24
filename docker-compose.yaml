@@ -3,15 +3,21 @@ version: '3.8'
 
 services:
   jenkins:
-    image: jenkins/jenkins:2.60.3
+    image: jenkins/jenkins:lts
     container_name: jenkins
     privileged: true
     user: root
     env_file:
       - .env
     ports:
-      - 8080:8080
-      - 50000:50000
+      - ${JENKINS_UI_PORT}:8080
+      - ${JENKINS_COMMUNICATION_PORT}:50000
     volumes:
       - ${JENKINS_HOME}:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - jenkins-net
+
+networks:
+  jenkins-net:
+    name: jenkins-net
