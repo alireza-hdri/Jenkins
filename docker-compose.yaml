@@ -13,7 +13,7 @@ services:
       - ${JENKINS_UI_PORT}:8080
       - ${JENKINS_COMMUNICATION_PORT}:50000
     volumes:
-      - ${JENKINS_HOME}:/var/jenkins_home
+      - ${JENKINS_HOME}:/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock
     networks:
       - jenkins-net
