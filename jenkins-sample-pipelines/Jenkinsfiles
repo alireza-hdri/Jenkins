@@ -1,0 +1,4 @@
+pipeline{
+    agnet any
+    stage
+}
