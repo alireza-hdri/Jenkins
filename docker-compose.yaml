@@ -20,4 +20,4 @@ services:
 
 networks:
   jenkins-net:
-    name: jenkins-net
+    name: jenkins-
